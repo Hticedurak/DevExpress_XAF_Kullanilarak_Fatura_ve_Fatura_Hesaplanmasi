@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="Fatura">
+  <Views>
+    <DetailView Id="Bill_DetailView" Caption="Fatura">
+      <Items>
+        <PropertyEditor Id="CalculatorKDVAmount" Caption="KDV Tutar Hesaplama" />
+        <PropertyEditor Id="CalculatorNetAmount" Caption="Net Tutar Hesaplama" />
+        <PropertyEditor Id="CalculatorTotalAmount" Caption="Toplam Tutar Hesaplama" />
+        <PropertyEditor Id="City" Caption="İl" />
+        <PropertyEditor Id="Customer" Caption="Müşteri" />
+        <PropertyEditor Id="Date" Caption="Tarih" />
+        <PropertyEditor Id="Description" Caption="Açıklama" />
+        <PropertyEditor Id="District" Caption="İlçe" />
+        <PropertyEditor Id="InvoiceTransactions" Caption="Fatura Hareketi" />
+        <PropertyEditor Id="KDVAmount" Caption="KDV Tutarı" />
+        <PropertyEditor Id="NetAmount" Caption="Net Tutar" />
+        <PropertyEditor Id="Number" Caption="Numara" />
+        <PropertyEditor Id="TotalAmount" Caption="Toplam Tutar" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Bill" Caption="Fatura" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Bill_InvoiceTransactions_ListView" Caption="Fatura Hareketi">
+      <Columns>
+        <ColumnInfo Id="Bill" Caption="Fatura" />
+        <ColumnInfo Id="Description" Caption="Açıklama" />
+        <ColumnInfo Id="Product" Caption="Ürün" />
+        <ColumnInfo Id="Quantity" Caption="Miktar" />
+        <ColumnInfo Id="Price" Caption="Fiyat" />
+        <ColumnInfo Id="KDVRate" Caption="KDV Oranı" />
+        <ColumnInfo Id="NetAmount" Caption="Net Tutar" />
+        <ColumnInfo Id="KDVAmount" Caption="KDV Tutarı" />
+        <ColumnInfo Id="TotalAmount" Caption="Toplam Tutar" />
+      </Columns>
+    </ListView>
+    <ListView Id="Bill_ListView" Caption="Fatura">
+      <Columns>
+        <ColumnInfo Id="CalculatorKDVAmount" Caption="KDV Tutar Hesaplama" />
+        <ColumnInfo Id="CalculatorNetAmount" Caption="Net Tutar Hesaplama" />
+        <ColumnInfo Id="CalculatorTotalAmount" Caption="Toplam Tutar Hesaplama" />
+        <ColumnInfo Id="Description" Caption="Açıklama" />
+        <ColumnInfo Id="Date" Caption="Tarih" />
+        <ColumnInfo Id="Number" Caption="Numara" />
+        <ColumnInfo Id="Customer" Caption="Müşteri" />
+        <ColumnInfo Id="City" Caption="İl" />
+        <ColumnInfo Id="District" Caption="İlçe" />
+        <ColumnInfo Id="NetAmount" Caption="Net Tutar" />
+        <ColumnInfo Id="KDVAmount" Caption="KDV Tutar" />
+        <ColumnInfo Id="TotalAmount" Caption="Toplam Tutar" />
+      </Columns>
+    </ListView>
+    <DetailView Id="City_DetailView" Caption="İl">
+      <Items>
+        <PropertyEditor Id="Code" Caption="Kod" />
+        <PropertyEditor Id="Districts" Caption="İlçe" />
+        <PropertyEditor Id="Name" Caption="İsim" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="City" Caption="İl" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="City_Districts_ListView">
+      <Columns>
+        <ColumnInfo Id="City" Caption="Şehir" />
+        <ColumnInfo Id="Name" Caption="İsim" />
+        <ColumnInfo Id="Code" Caption="Kod" />
+      </Columns>
+    </ListView>
+    <ListView Id="City_ListView" Caption="İl">
+      <Columns>
+        <ColumnInfo Id="Name" Caption="İsim" />
+        <ColumnInfo Id="Code" Caption="Kod" />
+      </Columns>
+    </ListView>
+    <ListView Id="City_LookupListView">
+      <Columns>
+        <ColumnInfo Id="Name" Caption="İsim" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Customer_DetailView" Caption="Müşteri">
+      <Items>
+        <PropertyEditor Id="City" Caption="İl" />
+        <PropertyEditor Id="Code" Caption="Kod" />
+        <PropertyEditor Id="DealDate" Caption="Anlaşma Tarihi" />
+        <PropertyEditor Id="District" Caption="İlçe" />
+        <PropertyEditor Id="Name" Caption="İsim" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Customer" Caption="Müşteri" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Customer_ListView" Caption="Müşteri">
+      <Columns>
+        <ColumnInfo Id="Name" Caption="İsim" />
+        <ColumnInfo Id="Code" Caption="Kod" />
+        <ColumnInfo Id="DealDate" Caption="Anlaşma Tarihi" />
+        <ColumnInfo Id="City" Caption="İl" />
+        <ColumnInfo Id="District" Caption="İlçe" />
+      </Columns>
+    </ListView>
+    <ListView Id="Customer_LookupListView">
+      <Columns>
+        <ColumnInfo Id="Name" Caption="İsim" />
+      </Columns>
+    </ListView>
+    <DetailView Id="District_DetailView" Caption="İlçe">
+      <Items>
+        <PropertyEditor Id="Code" Caption="Kod" />
+        <PropertyEditor Id="Name" Caption="İsim" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="District" Caption="İlçe" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="District_ListView" Caption="İlçe">
+      <Columns>
+        <ColumnInfo Id="Name" Caption="İsim" />
+        <ColumnInfo Id="Code" Caption="Kod" />
+        <ColumnInfo Id="City" Caption="İl" />
+      </Columns>
+    </ListView>
+    <ListView Id="District_LookupListView">
+      <Columns>
+        <ColumnInfo Id="Name" Caption="İsim" />
+      </Columns>
+    </ListView>
+    <DetailView Id="InvoiceTransaction_DetailView" Caption="Fatura Hareketi">
+      <Items>
+        <PropertyEditor Id="Description" Caption="Açıklama" />
+        <PropertyEditor Id="KDVAmount" Caption="KDV Tutarı" />
+        <PropertyEditor Id="KDVRate" Caption="KDV Oranı" />
+        <PropertyEditor Id="NetAmount" Caption="Net Tutar" />
+        <PropertyEditor Id="Price" Caption="Fiyat" />
+        <PropertyEditor Id="Product" Caption="Ürün" />
+        <PropertyEditor Id="Quantity" Caption="Miktar" />
+        <PropertyEditor Id="TotalAmount" Caption="Toplam Tutar" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="InvoiceTransaction" Caption="Fatura Hareketi" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="InvoiceTransaction_ListView" Caption="Fatura Hareketi">
+      <Columns>
+        <ColumnInfo Id="Bill" Caption="Fatura" />
+        <ColumnInfo Id="Description" Caption="Açıklama" />
+        <ColumnInfo Id="Product" Caption="Ürün" />
+        <ColumnInfo Id="Quantity" Caption="Miktar" />
+        <ColumnInfo Id="Price" Caption="Fiyat" />
+        <ColumnInfo Id="KDVRate" Caption="KDV Oranı" />
+        <ColumnInfo Id="NetAmount" Caption="Net Tutar" />
+        <ColumnInfo Id="KDVAmount" Caption="KDV Tutarı" />
+        <ColumnInfo Id="TotalAmount" Caption="Toplam Tutar" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Number_DetailView" Caption="Numara">
+      <Items>
+        <PropertyEditor Id="Beginning" Caption="Başlangıç" />
+        <PropertyEditor Id="Finish" Caption="Bitiş" />
+        <PropertyEditor Id="LastNumber" Caption="Son Numara" />
+        <PropertyEditor Id="Length" Caption="Uzunluk" />
+        <PropertyEditor Id="Type" Caption="Tip" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Number" Caption="Numara" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Number_ListView" Caption="Numara">
+      <Columns>
+        <ColumnInfo Id="Type" Caption="Tip" />
+        <ColumnInfo Id="Beginning" Caption="Başlangıç" />
+        <ColumnInfo Id="Finish" Caption="Bitiş" />
+        <ColumnInfo Id="LastNumber" Caption="Son Numara" />
+        <ColumnInfo Id="Length" Caption="Uzunluk" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Product_DetailView" Caption="Ürün">
+      <Items>
+        <PropertyEditor Id="Code" Caption="Kod" />
+        <PropertyEditor Id="KDVRate" Caption="KDV Oranı" />
+        <PropertyEditor Id="Name" Caption="İsim" />
+        <PropertyEditor Id="PurchasePrice" Caption="Alış Fiyatı" />
+        <PropertyEditor Id="SalePrice" Caption="Satış Fiyatı" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Product" Caption="Ürün" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Product_ListView" Caption="Ürün">
+      <Columns>
+        <ColumnInfo Id="Name" Caption="İsim" />
+        <ColumnInfo Id="Code" Caption="Kod" />
+        <ColumnInfo Id="KDVRate" Caption="KDV Oranı" />
+        <ColumnInfo Id="PurchasePrice" Caption="Alış Fiyatı" />
+        <ColumnInfo Id="SalePrice" Caption="Satış Fiyatı" />
+      </Columns>
+    </ListView>
+    <ListView Id="Product_LookupListView">
+      <Columns>
+        <ColumnInfo Id="Name" Caption="İsim" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel Id="BOModel">
+    <Class Name="Customer.Module.BusinessObjects.Bill">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="KDVAmount" AllowEdit="False" />
+        <Member Name="NetAmount" AllowEdit="False" />
+        <Member Name="TotalAmount" AllowEdit="False" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Views Id="Views">
+    <ListView Id="Bill_InvoiceTransactions_ListView" AllowNew="True" AllowLink="False" AllowEdit="True" NewItemRowPosition="Top" />
+  </Views>
+</Application>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="Customer">
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="21.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="21.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="21.2.3.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <DetailView Id="Bill_DetailView">
+      <Items>
+        <PropertyEditor Id="KDVAmount" AllowEdit="False" />
+        <PropertyEditor Id="NetAmount" AllowEdit="False" />
+        <PropertyEditor Id="TotalAmount" AllowEdit="False" />
+      </Items>
+    </DetailView>
+    <ListView Id="Bill_InvoiceTransactions_ListView" AllowEdit="True" NewItemRowPosition="Top">
+      <Columns>
+        <ColumnInfo Id="NetAmount" AllowEdit="False" />
+        <ColumnInfo Id="KDVAmount" AllowEdit="False" />
+        <ColumnInfo Id="TotalAmount" AllowEdit="False" />
+      </Columns>
+    </ListView>
+    <ListView Id="City_LookupListView" AllowNew="False" />
+    <ListView Id="District_LookupListView" AllowNew="False" />
+    <DetailView Id="InvoiceTransaction_DetailView">
+      <Items>
+        <PropertyEditor Id="KDVAmount" AllowEdit="False" />
+        <PropertyEditor Id="NetAmount" AllowEdit="False" />
+        <PropertyEditor Id="TotalAmount" AllowEdit="False" />
+      </Items>
+    </DetailView>
+    <ListView Id="Product_LookupListView" AllowNew="False" />
+  </Views>
+</Application>

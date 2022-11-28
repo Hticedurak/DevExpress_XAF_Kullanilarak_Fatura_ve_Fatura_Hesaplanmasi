@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel Id="BOModel">
+    <Class Name="Customer.Module.BusinessObjects.Bill" Caption="Fatura">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="KDVAmount" Caption="KDV Tutarı" />
+        <Member Name="NetAmount" Caption="Net Tutar" />
+        <Member Name="TotalAmount" Caption="Toplam Tutar" />
+        <Member Name="CalculatorKDVAmount" Caption="KDV Tutarı Hesaplama" />
+        <Member Name="CalculatorNetAmount" Caption="Net Tutar Hesaplama" />
+        <Member Name="CalculatorTotalAmount" Caption="Toplam Tutar Hesaplama" />
+        <Member Name="City" Caption="İl" />
+        <Member Name="Customer" Caption="Müşteri" />
+        <Member Name="Date" Caption="Tarih" />
+        <Member Name="Description" Caption="Açıklama" />
+        <Member Name="District" Caption="İlçe" />
+        <Member Name="InvoiceTransactions" Caption="Fatura Hareketi" />
+        <Member Name="Number" Caption="Numara" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Customer.Module.BusinessObjects.City" Caption="İl">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="Code" Caption="Kod" />
+        <Member Name="Districts" Caption="İlçe" />
+        <Member Name="Name" Caption="İsim" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Customer.Module.BusinessObjects.Customer" Caption="Müşteri">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="City" Caption="İl" />
+        <Member Name="Code" Caption="Kod" />
+        <Member Name="DealDate" Caption="Anlaşma Tarihi" />
+        <Member Name="District" Caption="İlçe" />
+        <Member Name="Name" Caption="İsim" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Customer.Module.BusinessObjects.District" Caption="İlçe">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="City" Caption="İl" />
+        <Member Name="Code" Caption="Kod" />
+        <Member Name="Name" Caption="İsim" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Customer.Module.BusinessObjects.InvoiceTransaction" Caption="Fatura Hareketi">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="Bill" Caption="Fatura" />
+        <Member Name="Description" Caption="Açıklama" />
+        <Member Name="KDVAmount" Caption="KDV Tutarı" />
+        <Member Name="KDVRate" Caption="KDV Oranı" />
+        <Member Name="NetAmount" Caption="Net Tutar" />
+        <Member Name="Price" Caption="Fiyat" />
+        <Member Name="Product" Caption="Ürün" />
+        <Member Name="Quantity" Caption="Miktar" />
+        <Member Name="TotalAmount" Caption="Toplam Tutar" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Customer.Module.BusinessObjects.Number" Caption="Numara" />
+    <Class Name="Customer.Module.BusinessObjects.Product" Caption="Ürün">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="Code" Caption="Kod" />
+        <Member Name="KDVRate" Caption="KDV Oranı" />
+        <Member Name="Name" Caption="İsim" />
+        <Member Name="PurchasePrice" Caption="Alış Fiyatı" />
+        <Member Name="SalePrice" Caption="Satış Fiyatı" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Views Id="Views">
+    <DetailView Id="InvoiceTransaction_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="InvoiceTransaction" Caption="Fatura Hareketi" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>
