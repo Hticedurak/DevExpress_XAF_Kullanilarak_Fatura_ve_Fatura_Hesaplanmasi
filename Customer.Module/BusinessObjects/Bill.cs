@@ -13,7 +13,8 @@ namespace Customer.Module.BusinessObjects
         public override void AfterConstruction()
         {
             base.AfterConstruction();
-            
+            XPCollection<Bill> collection = new XPCollection<Bill>(Session);
+            Number = $"{collection.Count + 1}";
         }
 
         private DateTime _Date;
@@ -219,7 +220,7 @@ namespace Customer.Module.BusinessObjects
             this.KDVAmount = CalculatorKDVAmount;
             base.OnSaving();
 
-            if (!(Session is NestedUnitOfWork) // Nesnenin üst oturuma değil de veritabanına kaydedilip kaydedilmediğini kontrol eder.
+            /* if (!(Session is NestedUnitOfWork) // Nesnenin üst oturuma değil de veritabanına kaydedilip kaydedilmediğini kontrol eder.
                  && (Session.DataLayer != null)
                      && Session.IsNewObject(this) // Nesnenin yeni olup olmadığını kontrol eder.
                          && (Session.ObjectLayer is SimpleObjectLayer)
@@ -228,7 +229,7 @@ namespace Customer.Module.BusinessObjects
                  int nextSequence = DistributedIdGeneratorHelper.Generate(Session.DataLayer, this.GetType().FullName, "MyServerPrefix");
                  Number = string.Format("N{0:D6}", nextSequence);
              }
-             base.OnSaving();
+             base.OnSaving();*/
 
         }
     }
