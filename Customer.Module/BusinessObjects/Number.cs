@@ -1,6 +1,5 @@
 ﻿using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
-using DevExpress.Persistent.Validation;
 using DevExpress.Xpo;
 
 namespace Customer.Module.BusinessObjects
@@ -83,7 +82,6 @@ namespace Customer.Module.BusinessObjects
 
 
         private int _Length;
-       [RuleRequiredField("RuleRequiredField for Number.Length", DefaultContexts.Save, "A Length must be specified")]
         
         public int Length
         {

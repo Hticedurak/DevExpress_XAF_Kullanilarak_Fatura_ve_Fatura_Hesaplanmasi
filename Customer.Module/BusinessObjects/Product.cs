@@ -1,6 +1,5 @@
 ﻿using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
-using DevExpress.Persistent.Validation;
 using DevExpress.Xpo;
 
 namespace Customer.Module.BusinessObjects
@@ -54,7 +53,6 @@ namespace Customer.Module.BusinessObjects
 
 
         private int _KDVRate;
-        [RuleRequiredField("RuleRequiredField for Product.KDVRate", DefaultContexts.Save, "A KDVRate must be specified")]
     
         public int KDVRate
         {
@@ -73,7 +71,6 @@ namespace Customer.Module.BusinessObjects
 
 
         private decimal _PurchasePrice;
-        [RuleRequiredField("RuleRequiredField for Product.PurchasePrice", DefaultContexts.Save, "A PurchasePrice must be specified")]
        
         public decimal PurchasePrice
         {
@@ -91,7 +88,6 @@ namespace Customer.Module.BusinessObjects
         }
 
         private decimal _SalePrice;
-        [RuleRequiredField("RuleRequiredField for Product.SalePrice", DefaultContexts.Save, "A SalePrice must be specified")]
         
         public decimal SalePrice
         {
