@@ -1,6 +1,5 @@
 ﻿using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
-using DevExpress.Persistent.Validation;
 using DevExpress.Xpo;
 
 
@@ -17,7 +16,6 @@ namespace Customer.Module.BusinessObjects
         }
 
         private string _Code;
-        [RuleRequiredField("RuleRequiredField for Customer.Code", DefaultContexts.Save, "Şehrin Kodu Girilmelidir.")]
 
         public string Code
         {
