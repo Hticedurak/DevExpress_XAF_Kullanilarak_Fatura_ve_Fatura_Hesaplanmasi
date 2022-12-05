@@ -202,7 +202,5 @@ namespace Customer.Module.BusinessObjects
                 }
             }
         }
-
-
     }
 }

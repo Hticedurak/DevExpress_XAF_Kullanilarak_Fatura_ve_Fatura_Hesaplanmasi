@@ -247,8 +247,6 @@ namespace Customer.Module.BusinessObjects
             this.TotalAmount = CalculatorTotalAmount;
             this.KDVAmount = CalculatorKDVAmount;
             base.OnSaving();
-
-
         }
     }
 }

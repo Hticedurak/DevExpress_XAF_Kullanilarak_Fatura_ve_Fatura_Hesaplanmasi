@@ -97,8 +97,5 @@ namespace Customer.Module.BusinessObjects
                 }
             }
         }
-
-
-
     }
 }
