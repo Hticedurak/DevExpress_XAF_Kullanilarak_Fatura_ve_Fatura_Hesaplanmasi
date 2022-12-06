@@ -1,5 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="Fatura">
+  <NavigationItems>
+    <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="@171c252d-6f04-4719-859c-4e084054b51b" Caption="Cari">
+            <Items>
+              <Item Id="@167a3868-6a37-4b6f-a338-932b2e9877d1" Caption="Tanımlar" />
+              <Item Id="@1c5cf528-d96f-487a-ad14-31ad5c9f922b" Caption="İşlemler" />
+            </Items>
+          </Item>
+          <Item Id="@2788879f-a4c6-4287-8de8-5a4ca2ae1dfb" Caption="Malzeme">
+            <Items>
+              <Item Id="@1c5cf528-d96f-487a-ad14-31ad5c9f922b" Caption="İşlemler" />
+            </Items>
+          </Item>
+          <Item Id="@6fd110ff-a2cb-4b38-aefa-154f563c94ea" Caption="Fatura">
+            <Items>
+              <Item Id="@1c5cf528-d96f-487a-ad14-31ad5c9f922b" Caption="İşlemler" />
+            </Items>
+          </Item>
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
   <Views>
     <DetailView Id="Bill_DetailView" Caption="Fatura">
       <Items>
@@ -28,8 +52,8 @@
     <ListView Id="Bill_InvoiceTransactions_ListView" Caption="Fatura Hareketi">
       <Columns>
         <ColumnInfo Id="Bill" Caption="Fatura" />
-        <ColumnInfo Id="Description" Caption="Açıklama" />
         <ColumnInfo Id="Product" Caption="Ürün" />
+        <ColumnInfo Id="Description" Caption="Açıklama" />
         <ColumnInfo Id="Quantity" Caption="Miktar" />
         <ColumnInfo Id="Price" Caption="Fiyat" />
         <ColumnInfo Id="KDVRate" Caption="KDV Oranı" />
@@ -43,15 +67,15 @@
         <ColumnInfo Id="CalculatorKDVAmount" Caption="KDV Tutar Hesaplama" />
         <ColumnInfo Id="CalculatorNetAmount" Caption="Net Tutar Hesaplama" />
         <ColumnInfo Id="CalculatorTotalAmount" Caption="Toplam Tutar Hesaplama" />
-        <ColumnInfo Id="Description" Caption="Açıklama" />
-        <ColumnInfo Id="Date" Caption="Tarih" />
         <ColumnInfo Id="Number" Caption="Numara" />
+        <ColumnInfo Id="Date" Caption="Tarih" />
         <ColumnInfo Id="Customer" Caption="Müşteri" />
         <ColumnInfo Id="City" Caption="İl" />
         <ColumnInfo Id="District" Caption="İlçe" />
         <ColumnInfo Id="NetAmount" Caption="Net Tutar" />
         <ColumnInfo Id="KDVAmount" Caption="KDV Tutar" />
         <ColumnInfo Id="TotalAmount" Caption="Toplam Tutar" />
+        <ColumnInfo Id="Description" Caption="Açıklama" />
       </Columns>
     </ListView>
     <DetailView Id="City_DetailView" Caption="İl">
@@ -71,14 +95,14 @@
     <ListView Id="City_Districts_ListView">
       <Columns>
         <ColumnInfo Id="City" Caption="Şehir" />
-        <ColumnInfo Id="Name" Caption="İsim" />
         <ColumnInfo Id="Code" Caption="Kod" />
+        <ColumnInfo Id="Name" Caption="İsim" />
       </Columns>
     </ListView>
     <ListView Id="City_ListView" Caption="İl">
       <Columns>
-        <ColumnInfo Id="Name" Caption="İsim" />
         <ColumnInfo Id="Code" Caption="Kod" />
+        <ColumnInfo Id="Name" Caption="İsim" />
       </Columns>
     </ListView>
     <ListView Id="City_LookupListView">
@@ -104,9 +128,9 @@
     </DetailView>
     <ListView Id="Customer_ListView" Caption="Müşteri">
       <Columns>
-        <ColumnInfo Id="Name" Caption="İsim" />
         <ColumnInfo Id="Code" Caption="Kod" />
         <ColumnInfo Id="DealDate" Caption="Anlaşma Tarihi" />
+        <ColumnInfo Id="Name" Caption="İsim" />
         <ColumnInfo Id="City" Caption="İl" />
         <ColumnInfo Id="District" Caption="İlçe" />
       </Columns>
@@ -131,9 +155,9 @@
     </DetailView>
     <ListView Id="District_ListView" Caption="İlçe">
       <Columns>
-        <ColumnInfo Id="Name" Caption="İsim" />
         <ColumnInfo Id="Code" Caption="Kod" />
         <ColumnInfo Id="City" Caption="İl" />
+        <ColumnInfo Id="Name" Caption="İsim" />
       </Columns>
     </ListView>
     <ListView Id="District_LookupListView">
@@ -163,8 +187,8 @@
     <ListView Id="InvoiceTransaction_ListView" Caption="Fatura Hareketi">
       <Columns>
         <ColumnInfo Id="Bill" Caption="Fatura" />
-        <ColumnInfo Id="Description" Caption="Açıklama" />
         <ColumnInfo Id="Product" Caption="Ürün" />
+        <ColumnInfo Id="Description" Caption="Açıklama" />
         <ColumnInfo Id="Quantity" Caption="Miktar" />
         <ColumnInfo Id="Price" Caption="Fiyat" />
         <ColumnInfo Id="KDVRate" Caption="KDV Oranı" />
@@ -216,11 +240,11 @@
     </DetailView>
     <ListView Id="Product_ListView" Caption="Ürün">
       <Columns>
-        <ColumnInfo Id="Name" Caption="İsim" />
         <ColumnInfo Id="Code" Caption="Kod" />
-        <ColumnInfo Id="KDVRate" Caption="KDV Oranı" />
+        <ColumnInfo Id="Name" Caption="İsim" />
         <ColumnInfo Id="PurchasePrice" Caption="Alış Fiyatı" />
         <ColumnInfo Id="SalePrice" Caption="Satış Fiyatı" />
+        <ColumnInfo Id="KDVRate" Caption="KDV Oranı" />
       </Columns>
     </ListView>
     <ListView Id="Product_LookupListView">

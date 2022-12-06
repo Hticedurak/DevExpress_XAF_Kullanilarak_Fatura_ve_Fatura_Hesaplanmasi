@@ -1,5 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application Title="Customer">
+<Application Title="Customer" PreferredLanguage="tr">
+  <BOModel>
+    <Class Name="Customer.Module.BusinessObjects.Bill" ImageName="ArrangeInRows" />
+    <Class Name="Customer.Module.BusinessObjects.City" ImageName="BO_Note" />
+    <Class Name="Customer.Module.BusinessObjects.Customer" ImageName="BO_Person" />
+    <Class Name="Customer.Module.BusinessObjects.District" ImageName="BO_Note" />
+    <Class Name="Customer.Module.BusinessObjects.InvoiceTransaction" ImageName="BO_Contract" />
+    <Class Name="Customer.Module.BusinessObjects.Number" ImageName="ListNumbers" />
+    <Class Name="Customer.Module.BusinessObjects.Product" ImageName="ProductQuickShippments" />
+  </BOModel>
+  <NavigationItems>
+    <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="@171c252d-6f04-4719-859c-4e084054b51b" ImageName="album" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="@167a3868-6a37-4b6f-a338-932b2e9877d1" ImageName="DefineName" IsNewNode="True">
+                <Items IsNewNode="True">
+                  <Item Id="City_ListView" ViewId="City_ListView" ObjectKey="" IsNewNode="True" />
+                  <Item Id="District_ListView" ViewId="District_ListView" ObjectKey="" IsNewNode="True" />
+                  <Item Id="Number_ListView" ViewId="Number_ListView" ObjectKey="" IsNewNode="True" />
+                </Items>
+              </Item>
+              <Item Id="@1c5cf528-d96f-487a-ad14-31ad5c9f922b" ImageName="BO_Appearance" IsNewNode="True">
+                <Items IsNewNode="True">
+                  <Item Id="Customer_ListView" ViewId="Customer_ListView" ObjectKey="" IsNewNode="True" />
+                </Items>
+              </Item>
+            </Items>
+          </Item>
+          <Item Id="@2788879f-a4c6-4287-8de8-5a4ca2ae1dfb" ImageName="album" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="@1c5cf528-d96f-487a-ad14-31ad5c9f922b" ImageName="BO_Appearance" IsNewNode="True">
+                <Items IsNewNode="True">
+                  <Item Id="Product_ListView" ViewId="Product_ListView" ObjectKey="" IsNewNode="True" />
+                </Items>
+              </Item>
+            </Items>
+          </Item>
+          <Item Id="@6fd110ff-a2cb-4b38-aefa-154f563c94ea" ImageName="album" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="@1c5cf528-d96f-487a-ad14-31ad5c9f922b" ImageName="BO_Appearance" IsNewNode="True">
+                <Items IsNewNode="True">
+                  <Item Id="Bill_ListView" ViewId="Bill_ListView" ObjectKey="" IsNewNode="True" />
+                </Items>
+              </Item>
+            </Items>
+          </Item>
+          <Item Id="Bill_ListView" Removed="True" />
+          <Item Id="City_ListView" Removed="True" />
+          <Item Id="Customer_ListView" Removed="True" />
+          <Item Id="District_ListView" Removed="True" />
+          <Item Id="InvoiceTransaction_ListView" Removed="True" />
+          <Item Id="Number_ListView" Removed="True" />
+          <Item Id="Product_ListView" Removed="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
   <Options>
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
@@ -11,20 +69,134 @@
   <Views>
     <DetailView Id="Bill_DetailView">
       <Items>
+        <PropertyEditor Id="InvoiceTransactions" LinkView="InvoiceTransaction_LookupListView" />
         <PropertyEditor Id="KDVAmount" AllowEdit="False" />
         <PropertyEditor Id="NetAmount" AllowEdit="False" />
         <PropertyEditor Id="TotalAmount" AllowEdit="False" />
       </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="39.142857142857146">
+            <LayoutGroup Id="Bill" RelativeSize="100">
+              <LayoutGroup Id="Bill_col1" RelativeSize="50">
+                <LayoutItem Id="Date" RelativeSize="20.37037037037037" />
+                <LayoutItem Id="Number" RelativeSize="14.814814814814815" />
+                <LayoutItem Id="Customer" RelativeSize="14.814814814814815" />
+                <LayoutItem Id="City" RelativeSize="14.814814814814815" />
+                <LayoutItem Id="District" RelativeSize="14.814814814814815" />
+                <LayoutItem Id="Description" RelativeSize="20.37037037037037" />
+              </LayoutGroup>
+              <LayoutGroup Id="Bill_col2" RelativeSize="50">
+                <LayoutItem Id="CalculatorNetAmount" Index="0" RelativeSize="20.37037037037037" />
+                <LayoutItem Id="KDVAmount" Index="0" RelativeSize="20.37037037037037" Removed="True" />
+                <LayoutItem Id="TotalAmount" Index="0" RelativeSize="20.37037037037037" Removed="True" />
+                <LayoutItem Id="CalculatorKDVAmount" Index="1" RelativeSize="14.814814814814815" />
+                <LayoutItem Id="CalculatorTotalAmount" Index="2" RelativeSize="64.81481481481481" />
+                <LayoutItem Id="NetAmount" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="InvoiceTransactions_Group" Direction="Vertical" RelativeSize="60.857142857142854">
+            <LayoutItem Id="InvoiceTransactions" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
     </DetailView>
-    <ListView Id="Bill_InvoiceTransactions_ListView" AllowEdit="True" NewItemRowPosition="Top">
+    <ListView Id="Bill_InvoiceTransactions_ListView" AllowEdit="True" NewItemRowPosition="Top" IsFooterVisible="True">
       <Columns>
-        <ColumnInfo Id="NetAmount" AllowEdit="False" />
-        <ColumnInfo Id="KDVAmount" AllowEdit="False" />
-        <ColumnInfo Id="TotalAmount" AllowEdit="False" />
+        <ColumnInfo Id="Product" Width="150" Index="0">
+          <Summary>
+            <ColumnSummaryItem Id="Summary0" SummaryType="Count" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="Description" Index="1" Width="150" />
+        <ColumnInfo Id="Quantity" Width="80" Index="2" />
+        <ColumnInfo Id="Price" Width="80" Index="3" />
+        <ColumnInfo Id="KDVRate" Width="80" Index="4" />
+        <ColumnInfo Id="NetAmount" AllowEdit="False" Width="100" Index="5" />
+        <ColumnInfo Id="KDVAmount" AllowEdit="False" Width="100" Index="6" />
+        <ColumnInfo Id="TotalAmount" AllowEdit="False" Width="100" Index="7" />
       </Columns>
     </ListView>
-    <ListView Id="City_LookupListView" AllowNew="False" />
-    <ListView Id="District_LookupListView" AllowNew="False" />
+    <ListView Id="Bill_ListView" IsFooterVisible="True" ShowAutoFilterRow="True">
+      <Columns>
+        <ColumnInfo Id="CalculatorKDVAmount" Width="2" Index="-1" />
+        <ColumnInfo Id="CalculatorNetAmount" Width="2" Index="-1" />
+        <ColumnInfo Id="CalculatorTotalAmount" Width="2" Index="-1" />
+        <ColumnInfo Id="Number" Width="40" Index="0">
+          <Summary>
+            <ColumnSummaryItem Id="Summary0" SummaryType="Count" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="Date" Index="1" Width="50" />
+        <ColumnInfo Id="Customer" Width="120" Index="2" SortIndex="0" SortOrder="Ascending" />
+        <ColumnInfo Id="City" Width="60" Index="3" />
+        <ColumnInfo Id="District" Width="60" Index="4" />
+        <ColumnInfo Id="NetAmount" Width="60" Index="5">
+          <Summary>
+            <ColumnSummaryItem Id="Summary0" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="KDVAmount" Width="60" Index="6">
+          <Summary>
+            <ColumnSummaryItem Id="Summary0" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="TotalAmount" Width="90" Index="7">
+          <Summary>
+            <ColumnSummaryItem Id="Summary0" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="Description" Index="8" Width="165" SortIndex="-1" SortOrder="None" />
+      </Columns>
+    </ListView>
+    <ListView Id="City_Districts_ListView" IsFooterVisible="True">
+      <Columns>
+        <ColumnInfo Id="Oid" Width="157" />
+        <ColumnInfo Id="Code" Width="30" Index="0">
+          <Summary>
+            <ColumnSummaryItem Id="Summary0" SummaryType="Count" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="Name" Index="1" />
+      </Columns>
+    </ListView>
+    <ListView Id="City_ListView" IsFooterVisible="True" ShowAutoFilterRow="True">
+      <Columns>
+        <ColumnInfo Id="Code" Index="0" Width="30">
+          <Summary>
+            <ColumnSummaryItem Id="Summary0" SummaryType="Count" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="Name" Index="1" />
+      </Columns>
+    </ListView>
+    <ListView Id="City_LookupListView" AllowNew="False" ShowAutoFilterRow="True" />
+    <ListView Id="Customer_ListView" IsFooterVisible="True" IsGroupPanelVisible="False" ShowAutoFilterRow="True">
+      <Columns>
+        <ColumnInfo Id="Code" Index="0" Width="30">
+          <Summary>
+            <ColumnSummaryItem Id="Summary0" SummaryType="Count" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="DealDate" Width="45" Index="1" />
+        <ColumnInfo Id="Name" Index="2" Width="289" />
+        <ColumnInfo Id="City" Width="60" />
+        <ColumnInfo Id="District" Width="60" />
+      </Columns>
+    </ListView>
+    <ListView Id="District_ListView" ShowAutoFilterRow="True" IsFooterVisible="True">
+      <Columns>
+        <ColumnInfo Id="Code" Index="0" Width="30">
+          <Summary>
+            <ColumnSummaryItem Id="Summary0" SummaryType="Count" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="City" Index="1" Width="50" />
+        <ColumnInfo Id="Name" Index="2" />
+      </Columns>
+    </ListView>
+    <ListView Id="District_LookupListView" AllowNew="False" ShowAutoFilterRow="True" />
     <DetailView Id="InvoiceTransaction_DetailView">
       <Items>
         <PropertyEditor Id="KDVAmount" AllowEdit="False" />
@@ -32,6 +204,50 @@
         <PropertyEditor Id="TotalAmount" AllowEdit="False" />
       </Items>
     </DetailView>
-    <ListView Id="Product_LookupListView" AllowNew="False" />
+    <ListView Id="InvoiceTransaction_ListView" ShowAutoFilterRow="True" IsFooterVisible="True">
+      <Columns>
+        <ColumnInfo Id="Product" Index="0" Width="120" SortIndex="0" SortOrder="Ascending">
+          <Summary>
+            <ColumnSummaryItem Id="Summary0" SummaryType="Count" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="Description" Index="1" Width="120" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="Quantity" Width="60" />
+        <ColumnInfo Id="Price" Width="60" />
+        <ColumnInfo Id="KDVRate" Width="60" />
+        <ColumnInfo Id="NetAmount" Width="60" />
+        <ColumnInfo Id="KDVAmount" Width="60" />
+        <ColumnInfo Id="TotalAmount" Width="60" />
+      </Columns>
+    </ListView>
+    <ListView Id="InvoiceTransaction_LookupListView" ShowAutoFilterRow="True" />
+    <ListView Id="Number_ListView" IsFooterVisible="True" ShowAutoFilterRow="True">
+      <Columns>
+        <ColumnInfo Id="Type" Width="120">
+          <Summary>
+            <ColumnSummaryItem Id="Summary0" SummaryType="Count" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="Beginning" Width="20" />
+        <ColumnInfo Id="Finish" Width="20" />
+        <ColumnInfo Id="LastNumber" Width="20" />
+        <ColumnInfo Id="Length" Width="20" />
+      </Columns>
+    </ListView>
+    <ListView Id="Number_LookupListView" ShowAutoFilterRow="True" />
+    <ListView Id="Product_ListView" ShowAutoFilterRow="True" IsFooterVisible="True">
+      <Columns>
+        <ColumnInfo Id="Code" Index="0" Width="40">
+          <Summary>
+            <ColumnSummaryItem Id="Summary0" SummaryType="Count" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="Name" Index="1" />
+        <ColumnInfo Id="PurchasePrice" Width="50" Index="2" />
+        <ColumnInfo Id="SalePrice" Width="50" Index="3" />
+        <ColumnInfo Id="KDVRate" Width="50" Index="4" />
+      </Columns>
+    </ListView>
+    <ListView Id="Product_LookupListView" AllowNew="False" ShowAutoFilterRow="True" />
   </Views>
 </Application>

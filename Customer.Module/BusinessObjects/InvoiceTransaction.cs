@@ -15,7 +15,6 @@ namespace Customer.Module.BusinessObjects
 
         }
 
-
         private Product _Product;
 
         public Product Product
@@ -117,15 +116,6 @@ namespace Customer.Module.BusinessObjects
                         KDVAmount = ((decimal)KDVRate * NetAmount) / 100;
                         TotalAmount = NetAmount + KDVAmount;
 
-                        decimal net = 0;
-                        if (Bill.InvoiceTransactions.Count > 0)
-                        {
-                            for (int i = 0; i < Bill.InvoiceTransactions.Count; i++)
-                            {
-                                net += Bill.InvoiceTransactions[i].NetAmount;
-                            }
-                        }
-                        Bill.NetAmount = net;
                     }
                 }
             }
@@ -144,20 +134,11 @@ namespace Customer.Module.BusinessObjects
                     if (!IsLoading && !IsSaving)
                     {
                         TotalAmount = NetAmount + KDVAmount;
-                        decimal kdvTotal = 0;
-                        if (Bill.InvoiceTransactions.Count > 0)
-                        {
-                            for (int i = 0; i < Bill.InvoiceTransactions.Count; i++)
-                            {
-                                kdvTotal += Bill.InvoiceTransactions[i].KDVAmount;
-                            }
-                        }
-                        Bill.KDVAmount = kdvTotal;
+
                     }
                 }
             }
         }
-
 
         private decimal _TotalAmount;
       
@@ -170,15 +151,7 @@ namespace Customer.Module.BusinessObjects
                 {
                     if (!IsLoading && !IsSaving)
                     {
-                        decimal total = 0;
-                        if (Bill.InvoiceTransactions.Count > 0)
-                        {
-                            for (int i = 0; i < Bill.InvoiceTransactions.Count; i++)
-                            {
-                                total += Bill.InvoiceTransactions[i].TotalAmount;
-                            }
-                        }
-                        Bill.TotalAmount = total;
+;
                     }
                 }
             }

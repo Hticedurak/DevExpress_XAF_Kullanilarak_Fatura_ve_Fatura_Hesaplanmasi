@@ -197,8 +197,8 @@ namespace Customer.Module.BusinessObjects
         }
 
         [PersistentAlias("InvoiceTransactions.Sum(NetAmount)")]
-        [VisibleInListView(false)]
-        [VisibleInDetailView(false)]
+        [VisibleInListView(true)]
+        [VisibleInDetailView(true)]
 
         public decimal CalculatorNetAmount
         {
@@ -210,8 +210,8 @@ namespace Customer.Module.BusinessObjects
         }
 
         [PersistentAlias("InvoiceTransactions.Sum(KDVAmount)")]
-        [VisibleInListView(false)]
-        [VisibleInDetailView(false)]
+        [VisibleInListView(true)]
+        [VisibleInDetailView(true)]
 
         public decimal CalculatorKDVAmount
         {
@@ -223,8 +223,8 @@ namespace Customer.Module.BusinessObjects
         }
 
         [PersistentAlias("InvoiceTransactions.Sum(TotalAmount)")]
-        [VisibleInListView(false)]
-        [VisibleInDetailView(false)]
+        [VisibleInListView(true)]
+        [VisibleInDetailView(true)]
 
         public decimal CalculatorTotalAmount
         {
