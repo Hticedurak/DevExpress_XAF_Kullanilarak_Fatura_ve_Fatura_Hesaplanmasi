@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Logo="ChartType_Doughnut">
-  <NavigationItems DefaultChildItemsDisplayStyle="LargeIcons" NavigationStyle="TreeList" ShowImages="False" />
+  <NavigationItems NavigationStyle="TreeList" ShowImages="False" />
   <Options UIType="TabbedMDI" EnableHtmlFormatting="True" UseAsyncLoading="True">
-    <LayoutManagerOptions EnableLayoutGroupImages="False" />
+    <LayoutManagerOptions EnableLayoutGroupImages="False" GroupStyle="Title" />
   </Options>
   <SchemaModules>
     <SchemaModule Name="CloneObjectModule" Version="21.2.3.0" IsNewNode="True" />

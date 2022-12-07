@@ -84,14 +84,10 @@
                 <LayoutItem Id="Customer" RelativeSize="14.814814814814815" />
                 <LayoutItem Id="City" RelativeSize="14.814814814814815" />
                 <LayoutItem Id="District" RelativeSize="14.814814814814815" />
-                <LayoutItem Id="Description" RelativeSize="20.37037037037037" />
               </LayoutGroup>
               <LayoutGroup Id="Bill_col2" RelativeSize="50">
-                <LayoutItem Id="CalculatorNetAmount" Index="0" RelativeSize="20.37037037037037" />
                 <LayoutItem Id="KDVAmount" Index="0" RelativeSize="20.37037037037037" Removed="True" />
                 <LayoutItem Id="TotalAmount" Index="0" RelativeSize="20.37037037037037" Removed="True" />
-                <LayoutItem Id="CalculatorKDVAmount" Index="1" RelativeSize="14.814814814814815" />
-                <LayoutItem Id="CalculatorTotalAmount" Index="2" RelativeSize="64.81481481481481" />
                 <LayoutItem Id="NetAmount" Removed="True" />
               </LayoutGroup>
             </LayoutGroup>
@@ -102,7 +98,7 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
-    <ListView Id="Bill_InvoiceTransactions_ListView" AllowEdit="True" NewItemRowPosition="Top" IsFooterVisible="True">
+    <ListView Id="Bill_InvoiceTransactions_ListView" AllowEdit="True" NewItemRowPosition="Top" IsFooterVisible="True" ShowAutoFilterRow="True">
       <Columns>
         <ColumnInfo Id="Product" Width="150" Index="0">
           <Summary>
@@ -113,9 +109,21 @@
         <ColumnInfo Id="Quantity" Width="80" Index="2" />
         <ColumnInfo Id="Price" Width="80" Index="3" />
         <ColumnInfo Id="KDVRate" Width="80" Index="4" />
-        <ColumnInfo Id="NetAmount" AllowEdit="False" Width="100" Index="5" />
-        <ColumnInfo Id="KDVAmount" AllowEdit="False" Width="100" Index="6" />
-        <ColumnInfo Id="TotalAmount" AllowEdit="False" Width="100" Index="7" />
+        <ColumnInfo Id="NetAmount" AllowEdit="False" Width="100" Index="5">
+          <Summary>
+            <ColumnSummaryItem Id="Summary0" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="KDVAmount" AllowEdit="False" Width="100" Index="6">
+          <Summary>
+            <ColumnSummaryItem Id="Summary0" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="TotalAmount" AllowEdit="False" Width="100" Index="7">
+          <Summary>
+            <ColumnSummaryItem Id="Summary0" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
       </Columns>
     </ListView>
     <ListView Id="Bill_ListView" IsFooterVisible="True" ShowAutoFilterRow="True">
@@ -150,6 +158,7 @@
         <ColumnInfo Id="Description" Index="8" Width="165" SortIndex="-1" SortOrder="None" />
       </Columns>
     </ListView>
+    <ListView Id="Bill_LookupListView" ShowAutoFilterRow="True" />
     <ListView Id="City_Districts_ListView" IsFooterVisible="True">
       <Columns>
         <ColumnInfo Id="Oid" Width="157" />
@@ -172,7 +181,7 @@
       </Columns>
     </ListView>
     <ListView Id="City_LookupListView" AllowNew="False" ShowAutoFilterRow="True" />
-    <ListView Id="Customer_ListView" IsFooterVisible="True" IsGroupPanelVisible="False" ShowAutoFilterRow="True">
+    <ListView Id="Customer_ListView" IsFooterVisible="True" ShowAutoFilterRow="True">
       <Columns>
         <ColumnInfo Id="Code" Index="0" Width="30">
           <Summary>
@@ -185,6 +194,7 @@
         <ColumnInfo Id="District" Width="60" />
       </Columns>
     </ListView>
+    <ListView Id="Customer_LookupListView" ShowAutoFilterRow="True" />
     <ListView Id="District_ListView" ShowAutoFilterRow="True" IsFooterVisible="True">
       <Columns>
         <ColumnInfo Id="Code" Index="0" Width="30">

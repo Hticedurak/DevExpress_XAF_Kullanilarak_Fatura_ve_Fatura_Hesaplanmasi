@@ -94,7 +94,7 @@
     </DetailView>
     <ListView Id="City_Districts_ListView">
       <Columns>
-        <ColumnInfo Id="City" Caption="Şehir" />
+        <ColumnInfo Id="City" Caption="İl" />
         <ColumnInfo Id="Code" Caption="Kod" />
         <ColumnInfo Id="Name" Caption="İsim" />
       </Columns>

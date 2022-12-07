@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="Bill_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Bill">
+              <LayoutGroup Id="Bill_col1">
+                <LayoutItem Id="Description" RelativeSize="20.37037037037037" />
+              </LayoutGroup>
+              <LayoutGroup Id="Bill_col2">
+                <LayoutItem Id="CalculatorNetAmount" Index="0" RelativeSize="20.37037037037037" />
+                <LayoutItem Id="CalculatorKDVAmount" Index="1" RelativeSize="14.814814814814815" />
+                <LayoutItem Id="CalculatorTotalAmount" Index="2" RelativeSize="64.81481481481481" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

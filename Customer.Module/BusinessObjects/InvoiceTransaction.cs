@@ -102,7 +102,6 @@ namespace Customer.Module.BusinessObjects
         }
 
         private decimal _NetAmount;
-     
         [ImmediatePostData]
         public decimal NetAmount
         {
@@ -122,7 +121,6 @@ namespace Customer.Module.BusinessObjects
         }
 
         private decimal _KDVAmount;
-      
         [ImmediatePostData]
         public decimal KDVAmount
         {
